@@ -3,12 +3,19 @@ import React, { Component } from 'react';
 class Mad extends Component {
     render() {
 
-        const { name, age, city } = this.props;
+        const { mads } = this.props;
+        const madList = mads.map(mad => {
+            return(
+                <div className="mad" key={mad.id}>
+                    <div>Name: {mad.name}</div>
+                    <div>Age: {mad.age}</div>
+                    <div>City: {mad.city}</div>
+                </div>
+            )
+        });
         return(
-            <div className="mad">
-                <div>Name: {name}</div>
-                <div>Age: {age}</div>
-                <div>City: {city}</div>
+            <div className="mad-list">
+                { madList }
             </div>
         )
     }
